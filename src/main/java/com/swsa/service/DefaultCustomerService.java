@@ -71,6 +71,7 @@ public class DefaultCustomerService implements CustomerService{
      */
     private CustomerModel populateCustomerModel(final Customer customer){
         CustomerModel customerModel = new CustomerModel();
+        customerModel.setId(customer.getId());
         customerModel.setCustomerId(customer.getCustomerId());
         customerModel.setName(customer.getName());
         customerModel.setMobileNo(customer.getMobileNo());
@@ -87,6 +88,7 @@ public class DefaultCustomerService implements CustomerService{
      */
     private Customer populateCustomerEntity(CustomerModel customerModel){
         Customer customer = new Customer();
+        customerModel.setId(customer.getId());
         customerModel.setCustomerId(customer.getCustomerId());
         customerModel.setName(customer.getName());
         customerModel.setMobileNo(customer.getMobileNo());
