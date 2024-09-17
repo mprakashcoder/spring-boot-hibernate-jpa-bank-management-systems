@@ -23,13 +23,13 @@ public class Customer {
     private Long id;
 
     @Column(name = "customerId")
-    private int customerId;
+    private Long customerId;
 
     @Column(name = "name")
     private String name;
 
     @Column(name = "mobileNo")
-    private long mobileNo;
+    private Long mobileNo;
 
     @Column(name = "address")
     private String address;
@@ -38,7 +38,7 @@ public class Customer {
     private String email;
 
     @ToString.Exclude
-    private long aadhaarNo;
+    private Long aadhaarNo;
 
     @ToString.Exclude
     @CreatedDate
@@ -50,9 +50,10 @@ public class Customer {
     @LastModifiedDate
     private LocalDateTime updatedTime;
 
-    public Customer(int customerId,String name,long mobileNo, String address, String email,long aadhaarNo)
+    public Customer(Long customerId,String name,Long mobileNo, String address, String email,Long aadhaarNo)
     {
         this.customerId=customerId;
+        this.name=name;
         this.mobileNo=mobileNo;
         this.address = address;
         this.email = email;
