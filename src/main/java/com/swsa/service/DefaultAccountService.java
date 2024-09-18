@@ -21,10 +21,10 @@ public class DefaultAccountService implements AccountService
     }
 
     /**
-     * Method to return list of all the available customers in the system.This is a simple
+     * Method to return list of all the available account in the system.This is a simple
      * implementation but you might want to use pagination in the real world example.
      *
-     * @return list of customer
+     * @return list of account
      */
     @Override
     public List<Accountmodel> getAllAccounts() {
@@ -37,7 +37,7 @@ public class DefaultAccountService implements AccountService
     }
 
     /**
-     * Get customer by ID.The service will send the customer data else will throw the exception.
+     * Get customer by ID.The service will send the account data else will throw the exception.
      * @param accountNumber
      * @return AccountModel
      */
@@ -48,7 +48,7 @@ public class DefaultAccountService implements AccountService
     }
 
     /**
-     * Internal method to convert Customer JPA entity to the DTO object
+     * Internal method to convert Account JPA entity to the DTO object
      * for frontend data
      * @param account
      * @return AccountModel
@@ -63,7 +63,7 @@ public class DefaultAccountService implements AccountService
     }
 
     /**
-     * Method to map the frontend customer object to the JPA customer entity.
+     * Method to map the frontend account object to the JPA account entity.
      * @param accountmodel
      * @return Account
      */
