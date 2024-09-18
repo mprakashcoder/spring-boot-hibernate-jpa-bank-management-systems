@@ -27,7 +27,7 @@ public class DefaultCardService implements CardService{
     }
 
     /**
-     * Method to return list of all the available customers in the system.This is a simple
+     * Method to return list of all the available card in the system.This is a simple
      * implementation but you might want to use pagination in the real world example.
      *
      * @return list of card
@@ -43,7 +43,7 @@ public class DefaultCardService implements CardService{
     }
 
     /**
-     * Get customer by ID.The service will send the customer data else will throw the exception.
+     * Get card by ID.The service will send the card data else will throw the exception.
      * @param cardId
      * @return CardModel
      */
@@ -53,7 +53,7 @@ public class DefaultCardService implements CardService{
     }
 
     /**
-     * Internal method to convert Customer JPA entity to the DTO object
+     * Internal method to convert card JPA entity to the DTO object
      * for frontend data
      * @param card
      * @return CardModel
@@ -71,9 +71,9 @@ public class DefaultCardService implements CardService{
     }
 
     /**
-     * Method to map the frontend customer object to the JPA customer entity.
+     * Method to map the frontend card object to the JPA card entity.
      * @param cardModel
-     * @return Customer
+     * @return Card
      */
     private Card populateCardEntity(CardModel cardModel){
         Card card = new Card();
