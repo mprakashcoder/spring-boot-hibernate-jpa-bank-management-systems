@@ -77,13 +77,13 @@ public class DefaultCardService implements CardService{
      */
     private Card populateCardEntity(CardModel cardModel){
         Card card = new Card();
-        cardModel.setId(card.getId());
-        cardModel.setCardId(card.getCardId());
-        cardModel.setCardNo(card.getCardNo());
-        cardModel.setAccountNo(card.getAccountNo());
-        cardModel.setAccountHolderName(card.getAccountHolderName());
-        cardModel.setCvv(card.getCvv());
-        cardModel.setCardType(card.getCardType());
+//        cardModel.setId(card.getId());
+        card .setCardId(cardModel.getCardId());
+        card .setCardNo(cardModel.getCardNo());
+        card .setAccountNo(cardModel.getAccountNo());
+        card .setAccountHolderName(cardModel.getAccountHolderName());
+        card .setCvv(cardModel.getCvv());
+        card .setCardType(cardModel.getCardType());
         return  card;
     }
 }
