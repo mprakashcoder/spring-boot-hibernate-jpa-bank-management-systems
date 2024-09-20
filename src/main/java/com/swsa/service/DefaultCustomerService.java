@@ -88,13 +88,13 @@ public class DefaultCustomerService implements CustomerService{
      */
     private Customer populateCustomerEntity(CustomerModel customerModel){
         Customer customer = new Customer();
-        customerModel.setId(customer.getId());
-        customerModel.setCustomerId(customer.getCustomerId());
-        customerModel.setName(customer.getName());
-        customerModel.setMobileNo(customer.getMobileNo());
-        customerModel.setAddress(customer.getAddress());
-        customerModel.setEmailId(customer.getEmail());
-        customerModel.setAadhaarNo(customer.getAadhaarNo());
+        customer.setId(customer.getId());
+        customer.setCustomerId(customerModel.getCustomerId());
+        customer.setName(customerModel.getName());
+        customer.setMobileNo(customerModel.getMobileNo());
+        customer.setAddress(customerModel.getAddress());
+        customer.setEmail(customerModel.getEmailId());
+        customer.setAadhaarNo(customerModel.getAadhaarNo());
         return  customer;
     }
 }
