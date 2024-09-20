@@ -69,10 +69,9 @@ public class DefaultAccountService implements AccountService
      */
     private Account populateAccountEntity(Accountmodel accountmodel){
        Account account = new Account();
-        accountmodel.setId(account.getId());
-        accountmodel.setAccountNumber(account.getAccountNumber());
-        accountmodel.setAccountHolderName(account.getAccountHolderName());
-        accountmodel.setCustomerId(account.getCustomerId());
+        account.setAccountNumber(accountmodel.getAccountNumber());
+        account.setAccountHolderName(accountmodel.getAccountHolderName());
+        account.setCustomerId(accountmodel.getCustomerId());
         return  account;
     }
 }
