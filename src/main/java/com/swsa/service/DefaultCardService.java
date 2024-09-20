@@ -77,7 +77,6 @@ public class DefaultCardService implements CardService{
      */
     private Card populateCardEntity(CardModel cardModel){
         Card card = new Card();
-//        cardModel.setId(card.getId());
         card .setCardId(cardModel.getCardId());
         card .setCardNo(cardModel.getCardNo());
         card .setAccountNo(cardModel.getAccountNo());
