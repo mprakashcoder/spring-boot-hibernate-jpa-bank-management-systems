@@ -4,5 +4,5 @@ import java.util.List;
 public interface AccountService {
     Accountmodel saveAccount(Accountmodel accountmodel);
     List<Accountmodel> getAllAccounts();
-    Accountmodel getAccountById(final String accountNumber);
+    Accountmodel getAccountById(final Long accountNumber);
 }
