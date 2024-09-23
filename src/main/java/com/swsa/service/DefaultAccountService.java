@@ -15,9 +15,9 @@ public class DefaultAccountService implements AccountService
     private AccountRepository accountRepository;
 
     @Override
-    public Accountmodel saveAccount(Accountmodel accountmodel) {
-        Account account = populateAccountEntity(accountmodel);
-        return populateAccountModel(accountRepository.save(account));
+    public Accountmodel saveAccount(Accountmodel account) {
+        Account accountmodel = populateAccountEntity(account);
+        return populateAccountModel(accountRepository.save(accountmodel));
     }
 
     /**
@@ -26,6 +26,7 @@ public class DefaultAccountService implements AccountService
      *
      * @return list of account
      */
+
     @Override
     public List<Accountmodel> getAllAccounts() {
         List<Accountmodel> accounts = new ArrayList<>();
@@ -42,9 +43,9 @@ public class DefaultAccountService implements AccountService
      * @return AccountModel
      */
     @Override
-    public Accountmodel getAccountById(String accountNumber)
+    public Accountmodel getAccountById(Long accountNumber)
     {
-        return populateAccountModel(accountRepository.findById(Long.valueOf(accountNumber)).orElseThrow(() -> new EntityNotFoundException("Account not found")));
+        return populateAccountModel(accountRepository.findById(accountNumber).orElseThrow(() -> new EntityNotFoundException("Account not found")));
     }
 
     /**
@@ -53,11 +54,14 @@ public class DefaultAccountService implements AccountService
      * @param account
      * @return AccountModel
      */
+
+
     private Accountmodel populateAccountModel(final Account account){
         Accountmodel accountmodel = new Accountmodel();
         accountmodel.setId(account.getId());
         accountmodel.setAccountNumber(account.getAccountNumber());
         accountmodel.setAccountHolderName(account.getAccountHolderName());
+        accountmodel.setBalance(account.getBalance());
         accountmodel.setCustomerId(account.getCustomerId());
         return  accountmodel;
     }
@@ -67,10 +71,12 @@ public class DefaultAccountService implements AccountService
      * @param accountmodel
      * @return Account
      */
+
     private Account populateAccountEntity(Accountmodel accountmodel){
        Account account = new Account();
         account.setAccountNumber(accountmodel.getAccountNumber());
         account.setAccountHolderName(accountmodel.getAccountHolderName());
+        account.setBalance(accountmodel.getBalance());
         account.setCustomerId(accountmodel.getCustomerId());
         return  account;
     }
