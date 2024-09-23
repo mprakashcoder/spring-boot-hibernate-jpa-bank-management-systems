@@ -116,5 +116,41 @@ curl --location --request GET 'http://localhost:8084/cardManagement/cards' \
 
 <hr>
 
+# Account form
+## Account POST Data
+```shell
+curl --location 'http://localhost:8084/accountManagement/account' \
+--header 'Content-Type: application/json' \
+--data '{
+
+    "accountNumber":1001,
+      "accountHolderName":"purvamali",
+        "balance": 50000,
+        "customerId":1
+}'
+```
+
+# card Post  Screen Shot
+
+<image src="" width="750" height="350">
+
+##  Account GET Data
+```shell
+curl --location --request GET 'http://localhost:8084/accountManagement/accounts' \
+--header 'Content-Type: application/json' \
+--data '{
+
+    "accountNumber":1001,
+      "accountHolderName":"purvamali",
+        "balance": 50000,
+        "customerId":1
+}'
+
+```
+
+# Account GET  Screen Shot
+
+<image src="https://github.com/user-attachments/assets/d44955bd-952d-4d6d-8733-511b141707de" width="750" height="350">
+
 
 
