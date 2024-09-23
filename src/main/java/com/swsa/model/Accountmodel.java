@@ -1,18 +1,13 @@
 package com.swsa.model;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-    @Setter
-    @Getter
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public class Accountmodel {
+import lombok.Data;
 
-        private Long id;
-        private  String accountNumber;
-        private String accountHolderName;
-        private double balance;
-        private String customerId;
-        // Customer customer;
+@Data
+    public class Accountmodel
+{
+
+    private Long id;
+    private Long accountNumber;
+    private String accountHolderName;
+    private double balance;
+    private Long customerId;
     }
