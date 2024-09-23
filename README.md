@@ -106,6 +106,10 @@ curl --location --request GET 'http://localhost:8084/cardManagement/cards' \
 }'
 ```
 
+# card GET  Screen Shot
+
+<image src="https://github.com/user-attachments/assets/0b4d3853-be78-47a5-bfe1-75a2115955a9" width="750" height="350">
+
 ## card MySql Database Screen Shot
 
 <image src="" width="750" height="350">
