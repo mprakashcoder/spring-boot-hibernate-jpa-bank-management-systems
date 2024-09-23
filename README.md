@@ -53,4 +53,15 @@ curl --location --request GET 'http://localhost:8084/customerManagement/customer
 <image src="https://github.com/user-attachments/assets/1ea8773f-2a29-4c9b-9665-07e554584dbe" width="750" height="350">
 
 
+### Only create Schemas bankmanagementsystemsjpa
+```shell
+ create ankmanagementsystemsjpa;
+SELECT * FROM bankmanagementsystemsjpa.customer;
+
+```
+# customer MySql Database Screen Shot
+
+<image src="https://github.com/user-attachments/assets/d11be352-a8a9-4feb-996b-843a938915c1" width="750" height="350">
+
+
 
