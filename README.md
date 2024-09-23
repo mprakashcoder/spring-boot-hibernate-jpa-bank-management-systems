@@ -48,4 +48,9 @@ curl --location --request GET 'http://localhost:8084/customerManagement/customer
     "aadhaarNo":"123456789"
 }'
 ```
+# customer GET Screen 
+
+<image src="https://github.com/user-attachments/assets/1ea8773f-2a29-4c9b-9665-07e554584dbe" width="750" height="350">
+
+
 
