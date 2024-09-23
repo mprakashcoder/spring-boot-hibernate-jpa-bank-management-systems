@@ -130,9 +130,9 @@ curl --location 'http://localhost:8084/accountManagement/account' \
 }'
 ```
 
-# card Post  Screen Shot
+# Account Post  Screen Shot
 
-<image src="" width="750" height="350">
+<image src="https://github.com/user-attachments/assets/8a07b539-fe0e-49a1-9ef1-804c2fd59594" width="750" height="350">
 
 ##  Account GET Data
 ```shell
