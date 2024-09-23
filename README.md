@@ -59,9 +59,58 @@ curl --location --request GET 'http://localhost:8084/customerManagement/customer
 SELECT * FROM bankmanagementsystemsjpa.customer;
 
 ```
-# customer MySql Database Screen Shot
+## customer MySql Database Screen Shot
 
 <image src="https://github.com/user-attachments/assets/d11be352-a8a9-4feb-996b-843a938915c1" width="750" height="350">
+
+<hr>
+
+# Card form
+## Card POST Data
+```shell
+curl --location 'http://localhost:8084/cardManagement/card' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+    
+        "cardId" : 1,
+         "cardNo":123,
+        "accountNo":1001,
+          "accountHolderName":"Purvamali",
+         "cvv":452,
+         "cardType":"Debit"
+}'
+```
+
+# card Post  Screen Shot
+
+<image src="https://github.com/user-attachments/assets/d442563b-5be2-4b4a-b69d-f8a28d57eee0" width="750" height="350">
+
+<hr>
+
+## Card GET Data
+```shell
+
+
+curl --location --request GET 'http://localhost:8084/cardManagement/cards' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+    
+        "cardId" : 1,
+         "cardNo":123,
+        "accountNo":1001,
+          "accountHolderName":"Purvamali",
+         "cvv":452,
+         "cardType":"Debit"
+}'
+```
+
+## card MySql Database Screen Shot
+
+<image src="" width="750" height="350">
+
+<hr>
 
 
 
