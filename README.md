@@ -20,3 +20,32 @@ mvn clean install
 ```shell
 mvn clean spring-boot:run
 ```
+# Customer form
+## Customer POST Data
+```shell
+curl --location 'http://localhost:8084/customerManagement/customer' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+     "customerId":1,
+     "name":"Nirav",
+    "mobileNo":"89345644",
+    "address":"Pune",
+     "emailId":"Nirav@gmail.com",
+    "aadhaarNo":"123456789"
+}'
+```
+## Customer GET Data
+```shell
+
+curl --location --request GET 'http://localhost:8084/customerManagement/customers' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+     "customerId":1,
+     "name":"Nirav",
+    "mobileNo":"89345644",
+    "address":"Pune",
+     "emailId":"Nirav@gmail.com",
+    "aadhaarNo":"123456789"
+}'
+```
+
