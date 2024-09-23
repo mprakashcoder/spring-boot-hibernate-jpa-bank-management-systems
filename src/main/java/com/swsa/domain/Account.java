@@ -10,7 +10,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
    @Getter
    @Setter
-    @Entity(name = "Account")
+    @Entity(name = "account")
     @ToString
     @NoArgsConstructor
     @EntityListeners(AuditingEntityListener.class)
@@ -22,16 +22,16 @@ import java.time.LocalDateTime;
            private Long id;
 
            @Column(name = "accountNumber")
-           private String accountNumber;
+           private  Long accountNumber;
 
            @Column(name = "accountHolderName")
-           private String accountHolderName;
+           private  String accountHolderName;
 
-           @Column(name = "balance")
-           private double balance;
+          @Column(name = "balance")
+          private  double balance;
 
            @ToString.Exclude
-           private String customerId;
+           private   Long customerId;
 
            @ToString.Exclude
            @CreatedDate
@@ -43,7 +43,7 @@ import java.time.LocalDateTime;
            @LastModifiedDate
            private LocalDateTime updatedTime;
 
-        public Account(String accountNumber, String accountHolderName, double balance, String customerId){
+        public Account(Long accountNumber, String accountHolderName, double balance, Long customerId){
            this.accountNumber = accountNumber;
            this.accountHolderName = accountHolderName;
            this.balance = balance;
