@@ -5,7 +5,7 @@ import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
-@RequestMapping(value = "/accountManagement")
+@RequestMapping(value ="/accountManagement")
 public class AccountController {
 
     @Resource(name = "accountService")
@@ -18,7 +18,7 @@ public class AccountController {
 
     @GetMapping("/account/{id}")
     public Accountmodel getAccount(@PathVariable Long id){
-        return accountService.getAccountById(String.valueOf(id));
+        return accountService.getAccountById(id);
     }
 
     @PostMapping("/account")
