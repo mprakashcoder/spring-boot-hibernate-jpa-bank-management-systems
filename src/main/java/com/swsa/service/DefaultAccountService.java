@@ -5,6 +5,8 @@ import com.swsa.repository.AccountRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.ArrayList;
 import java.util.List;
 @Service("accountService")
@@ -20,6 +22,17 @@ public class DefaultAccountService implements AccountService
         return populateAccountModel(accountRepository.save(accountmodel));
     }
 
+    @Transactional
+    public Account deposit(Long id, Double balance) throws Exception {
+        Account account = getAccount(id);
+        account.setBalance(account.getBalance() + balance);
+        return accountRepository.save(account);
+    }
+
+    @Override
+    public Account getAccount(Long id) {
+        return null;
+    }
     /**
      * Method to return list of all the available account in the system.This is a simple
      * implementation but you might want to use pagination in the real world example.
@@ -37,6 +50,7 @@ public class DefaultAccountService implements AccountService
         return accounts;
     }
 
+
     /**
      * Get customer by ID.The service will send the account data else will throw the exception.
      * @param accountNumber
@@ -47,6 +61,8 @@ public class DefaultAccountService implements AccountService
     {
         return populateAccountModel(accountRepository.findById(accountNumber).orElseThrow(() -> new EntityNotFoundException("Account not found")));
     }
+
+
 
     /**
      * Internal method to convert Account JPA entity to the DTO object
