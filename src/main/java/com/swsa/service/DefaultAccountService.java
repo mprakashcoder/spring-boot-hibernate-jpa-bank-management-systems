@@ -22,14 +22,14 @@ public class DefaultAccountService implements AccountService
     }
 
     @Transactional
-    public Accountmodel deposit(Long id, Double amount) throws Exception {
+    public Account deposit(Long id, Double amount) throws Exception {
         Account account = getAccount(id);
         account.setBalance(account.getBalance() + amount);
         return accountRepository.save(account);
     }
 
     @Transactional
-    public Accountmodel withdraw(Long id, Double amount) throws Exception {
+    public Account withdraw(Long id, Double amount) throws Exception {
         Account account = getAccount(id);
         if (account.getBalance() < amount) {
             throw new Exception("Insufficient balance");
