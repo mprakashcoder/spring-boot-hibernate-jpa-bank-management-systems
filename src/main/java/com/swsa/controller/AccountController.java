@@ -22,6 +22,11 @@ public class AccountController {
     public Accountmodel getAccount(@PathVariable Long id){
         return accountService.getAccountById(id);
     }
+
+    @GetMapping("/{accountNumber}/balance")
+    public Accountmodel getAccountBalance(@PathVariable Long accountNumber) {
+        return accountService.getBalance(accountNumber);
+    }
 //
 //    @PostMapping("/account")
 //    public Accountmodel saveAccount(final @RequestBody Accountmodel accountmodel){
@@ -57,5 +62,7 @@ public class AccountController {
             return ResponseEntity.badRequest().body(null);  // Handle errors such as insufficient funds
         }
     }
+
+
 
 }
