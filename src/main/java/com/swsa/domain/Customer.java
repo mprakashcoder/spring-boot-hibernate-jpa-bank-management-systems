@@ -37,7 +37,7 @@ public class Customer {
     @ToString.Exclude
     private String email;
 
-    @ToString.Exclude
+    @Column(name = "aadhaarNo")
     private Long aadhaarNo;
 
     @ToString.Exclude

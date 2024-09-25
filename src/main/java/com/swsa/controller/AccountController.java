@@ -1,4 +1,5 @@
 package com.swsa.controller;
+import com.swsa.domain.Account;
 import com.swsa.model.Accountmodel;
 import com.swsa.service.AccountService;
 import jakarta.annotation.Resource;
@@ -37,13 +38,23 @@ public class AccountController {
             return ResponseEntity.badRequest().body(null);  // Handle errors and return bad request if needed
         }
     }
-
-    @PutMapping("/deposit/{id}")
-    public ResponseEntity<Accountmodel> deposit(@PathVariable Long id, @RequestBody  Double balance) {
+    // Endpoint to deposit an amount from an account
+    @PostMapping("/{id}/deposit")
+    public ResponseEntity<Accountmodel> deposit(@PathVariable Long id, @RequestBody  Double amount) {
         try {
-            return ResponseEntity.ok(accountService.deposit(id, balance));
+            return ResponseEntity.ok(accountService.deposit(id, amount));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(null);
+        }
+    }
+
+    // Endpoint to withdraw an amount from an account
+    @PostMapping("/{id}/withdraw")
+    public ResponseEntity<Accountmodel> withdraw(@PathVariable Long id, @RequestParam Double amount) {
+        try {
+            return ResponseEntity.ok(accountService.withdraw(id, amount));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(null);  // Handle errors such as insufficient funds
         }
     }
 

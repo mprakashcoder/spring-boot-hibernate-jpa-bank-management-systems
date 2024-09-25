@@ -6,7 +6,6 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.ArrayList;
 import java.util.List;
 @Service("accountService")
@@ -16,23 +15,29 @@ public class DefaultAccountService implements AccountService
     @Autowired
     private AccountRepository accountRepository;
 
-    @Override
+    @Transactional
     public Accountmodel saveAccount(Accountmodel account) {
         Account accountmodel = populateAccountEntity(account);
         return populateAccountModel(accountRepository.save(accountmodel));
     }
 
     @Transactional
-    public Account deposit(Long id, Double balance) throws Exception {
+    public Account deposit(Long id, Double amount) throws Exception {
         Account account = getAccount(id);
-        account.setBalance(account.getBalance() + balance);
+        account.setBalance(account.getBalance() + amount);
         return accountRepository.save(account);
     }
 
-    @Override
-    public Account getAccount(Long id) {
-        return null;
+    @Transactional
+    public Account withdraw(Long id, Double amount) throws Exception {
+        Account account = getAccount(id);
+        if (account.getBalance() < amount) {
+            throw new Exception("Insufficient balance");
+        }
+        account.setBalance(account.getBalance() - amount);
+        return accountRepository.save(account);
     }
+
     /**
      * Method to return list of all the available account in the system.This is a simple
      * implementation but you might want to use pagination in the real world example.
@@ -50,7 +55,6 @@ public class DefaultAccountService implements AccountService
         return accounts;
     }
 
-
     /**
      * Get customer by ID.The service will send the account data else will throw the exception.
      * @param accountNumber
@@ -62,6 +66,10 @@ public class DefaultAccountService implements AccountService
         return populateAccountModel(accountRepository.findById(accountNumber).orElseThrow(() -> new EntityNotFoundException("Account not found")));
     }
 
+    @Override
+    public Account getAccount(Long id) {
+        return null;
+    }
 
 
     /**

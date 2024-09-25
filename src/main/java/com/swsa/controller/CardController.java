@@ -5,7 +5,7 @@ import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
-@RequestMapping(value = "/cardManagement")
+@RequestMapping(value= "/cardManagement")
 public class CardController {
 
     @Resource(name = "cardService")

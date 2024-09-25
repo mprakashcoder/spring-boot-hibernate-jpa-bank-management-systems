@@ -1,4 +1,5 @@
 package com.swsa.domain;
+import com.swsa.model.Accountmodel;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,8 +15,7 @@ import java.time.LocalDateTime;
     @ToString
     @NoArgsConstructor
     @EntityListeners(AuditingEntityListener.class)
-    public class Account
-   {
+    public class Account extends Accountmodel {
            @Id
            @ToString.Exclude
            @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +28,7 @@ import java.time.LocalDateTime;
            private  String accountHolderName;
 
           @Column(name = "balance")
-          private  double balance;
+          private  Double balance;
 
            @ToString.Exclude
            private   Long customerId;

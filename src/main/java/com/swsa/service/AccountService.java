@@ -7,8 +7,8 @@ import java.util.List;
 public interface AccountService {
     Accountmodel saveAccount(Accountmodel accountmodel);
 
-    Account deposit(Long id, Double balance) throws Exception;
-
+    Account deposit(Long id, Double amount) throws Exception;
+    Account withdraw(Long id, Double amount) throws Exception;
     List<Accountmodel> getAllAccounts();
     Accountmodel getAccountById(final Long accountNumber);
     Account  getAccount(Long id);
